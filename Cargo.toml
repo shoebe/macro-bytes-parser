@@ -1,6 +1,14 @@
 [package]
-name = "programming-lang"
+name = "aseprite-parser"
 version = "0.1.0"
 edition = "2021"
 
+[workspace]
+members = ["parsing", "parsing-macro"]
+
 [dependencies]
+serde = { version = "1.0.203", features = ["derive"] }
+rgb = { version = "0.8.37", features = ["serde"] }
+bytemuck = "1.16.1"
+byteorder = "1.5.0"
+parsing = { path = "parsing" }
