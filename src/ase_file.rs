@@ -256,7 +256,8 @@ parsing::parsable_struct! {
 parsing::parsable_struct! {
     #[derive(Clone, PartialEq, Eq, Debug)]
     pub struct UserDataChunk<'a> {
-        pub new_palette_size: Dword,
+        pub flags: Dword,
+        pub text: Option<&'a [u8]>
         pub first_ind: Dword,
         pub last_ind: Dword,
         [[padding_bytes = 8]]
